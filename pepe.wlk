@@ -107,6 +107,7 @@ method bonoResultado(){
 method bonoResultado(_bonoResultado){
     bonoResultado = _bonoResultado    
  }
+
 }
 
 object ernesto{
