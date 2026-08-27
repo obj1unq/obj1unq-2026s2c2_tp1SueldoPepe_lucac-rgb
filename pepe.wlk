@@ -16,7 +16,7 @@ method neto(){
 
 method faltas(){
     return faltas
- }
+ } 
 
 method faltar() {  
     faltas = faltas + 1
@@ -44,10 +44,12 @@ method categoria(){
 
 method categoria(_categoria){
     categoria = _categoria
- }
-
 }
 
+method sueldoTotal(){
+    return sueldoTotal
+ }
+}
 
 object moria {
 
@@ -77,6 +79,12 @@ method neto(){
 
 method calcularSueldo(){
     sueldoTotal = self.neto() + bonoResultado.bonoResultado(self)
+ }
+
+method sueldoTotal(){
+
+    return sueldoTotal
+
  }
 
 }
@@ -141,7 +149,12 @@ method calcularSueldo(){
     sueldoTotal = compañero.neto() + bonoPresentismo.bonoPresentismo(self)
  }
 
+method sueldoTotal(){
+    return sueldoTotal
+ }
+
 }
+
 
 //CATEGORIAS
 
@@ -151,7 +164,7 @@ const sueldoNeto = 15000
 
 method sueldoNeto(){
     return sueldoNeto
- } 
+ }
 
 }
 
@@ -168,7 +181,7 @@ method sueldoNeto(){
 object vendedor {
 
 const netoBase = 16000
-var muchasVentas = Boolean
+var muchasVentas = false
 var sueldoNeto = 0
 
 method activarAumentoPorMuchasVentas(){
@@ -203,17 +216,21 @@ method calcularSueldo(){
     sueldoNeto = categoriaBase.sueldoNeto() / 2 
  }
 
-}
+method sueldoNeto(){
+    return sueldoNeto
+ }
 
+}
 
 //BONOS POR RESULTADOS
 
 object porcentaje {
 
 method bonoResultado(empleado) {
-    return empleado.netoEmpleado() * 0.1 
+    return empleado.neto() * 0.1 
 
  }
+
 }
 
 object montoFijo {
@@ -256,7 +273,7 @@ method bonoPresentismo(empleado) {
 object demagogico {
 
 method bonoPresentismo(empleado) {
-     if (empleado.netoEmpleado() <= 18000) {return 500}
+     if (empleado.neto() <= 18000) {return 500}
             else{return 300}
         }
 
